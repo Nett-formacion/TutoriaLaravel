@@ -1,4 +1,12 @@
 @extends("layouts.layout")
+@section("metaDescription")
+    Explicacion sobre el desarrollo web con Laravel. Cubriendo los aspectos fullstack, con blade, plantillas y back.
+    Autenticación y bases de datos
+@endsection
+
+@section("title")
+    App laravel
+@endsection
 @section ("contenido")
     <div class="hero h-full"
                            style="background-image: url(https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg);">
