@@ -1,50 +1,3 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="@yield('metaDescription')"
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <title>@yield("title")</title>
-</head>
-<body>
-    <header class="lg:hidden bg-header flex flex-col justify-center items-center  py-2 space-y-1">
-        <img class="h-3/5" src="{{asset("images/logos/nett_logo.png")}}" alt="logo nett">
-        <button class="h-1/5 w-full btn bg-main "> Acceder</button>
-        <button class="h-1/5 w-full btn  bg-main">Registrar</button>
-    </header>
-    <header class="hidden lg:flex h-15v bg-header flex flex-row justify-center items-center">
-        <img class="w-1/5 max-h-full w-auto  p-5 " src="{{asset("images/logos/nett_logo.png")}}" alt="logo nett">
-        <div class="w-3/5 flex justify-center items-center">
-            <h1 class="text-3xl text-white h-auto max-w-full truncate ">APLICACIÓN EJEMPLO LARAVEL</h1>
-        </div>
-        <div class=" w-1/5 h-auto max-w-full flex items-center space-x-4 ">
-            <button class="btn glass  text-white"> Acceder</button>
-            <button class="btn  glass text-white">Registrar</button>
-        </div>
-    </header>
-
-   <nav class="hidden lg:flex h-10v bg-nav flex flex-row justify-start items-center space-x-2">
-        <a href="{{ route('home') }}" class="btn ">Inicio</a>
-        <a href="{{ route('about') }}" class="btn ">Acerca de Nosotros</a>
-        <a href="{{ route('projects') }}" class="btn">Proyectos</a>
-        <a href="{{ route('contact') }}" class="btn">Contacto</a>
-        <a href="{{ route('students') }}" class="btn">Alumnos</a>
-        @yield("nav")
-    </nav>
-    <nav class="lg:hidden bg-nav flex flex-col justify-start space-y-1 px-2">
-        <a href="{{ route('home') }}" class="btn btn-primary  ">Inicio</a>
-        <a href="{{ route('about') }}" class="btn btn-primary">Acerca de Nosotros</a>
-        <a href="{{ route('projects') }}" class="btn btn-primary">Proyectos</a>
-        <a href="{{ route('contact') }}" class="btn btn-primary">Contacto</a>
-        <a href="{{ route('students') }}" class="btn btn-primary">Alumnos</a>
-        @yield("nav")
-    </nav>
-    <main class="h-65v bg-main">
-    @yield("contenido")
-</main>
 <footer  class="h-10v bg-footer footer items-center p-4 bg-neutral text-neutral-content">
     <aside class="items-center grid-flow-col">
         <svg width="36" height="36" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
@@ -75,5 +28,3 @@
         </a>
     </nav>
 </footer>
-</body>
-</html>
