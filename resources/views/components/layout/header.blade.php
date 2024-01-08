@@ -9,7 +9,7 @@
         <h1 class="text-3xl text-white h-auto max-w-full truncate ">APLICACIÓN EJEMPLO LARAVEL</h1>
     </div>
     <div class=" w-1/5 h-auto max-w-full flex items-center space-x-4 ">
-        <button class="btn glass  text-white"> Acceder</button>
-        <button class="btn  glass text-white">Registrar</button>
+        <a href="login" class="btn glass  text-white"> Acceder</a>
+        <a href="register"  class="btn  glass text-white">Registrar</a>
     </div>
 </header>

@@ -23,6 +23,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 **/
 
+Route::view("react","react" );
+Route::view("modal","modal" );
+
 Route::get("/",[\App\Http\Controllers\MainController::class,"index"])
     ->name("home");
 
