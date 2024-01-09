@@ -1,52 +1,42 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
-
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+<x-layout.layout>
+    @slot("slot_main")
+        <div class="relative flex flex-col justify-center pt-10 overflow-hidden">
+            <div class="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-lg">
+                <h1 class="text-3xl font-semibold text-center text-purple-700">Datos de registro</h1>
+                <form class="space-y-4" action ="{{route("register")}}" method="post">
+                    @csrf
+                    <div>
+                        <label class="label">
+                            <span class="text-base label-text">Nombre</span>
+                        </label>
+                        <input type="text" placeholder="Nombre" name="name" class="w-full input input-bordered input-primary" />
+                    </div>
+                    <div>
+                        <label class="label">
+                            <span class="text-base label-text">Email</span>
+                        </label>
+                        <input type="text" name="email" placeholder="Email Address" class="w-full input input-bordered input-primary" />
+                    </div>
+                    <div>
+                        <label class="label">
+                            <span class="text-base label-text">Confirmar la password</span>
+                        </label>
+                        <input type="password" name="password_confirmation" placeholder="Confirmar la Password"
+                               class="w-full input input-bordered input-primary" />
+                    </div>
+                    <div>
+                        <label class="label">
+                            <span class="text-base label-text">Password</span>
+                        </label>
+                        <input type="password" name="password" placeholder="Enter Password"
+                               class="w-full input input-bordered input-primary" />
+                    </div>
+                    <a href="#" class="text-xs text-gray-600 hover:underline hover:text-blue-600">Forget Password?</a>
+                    <div>
+                        <input type="submit" class="btn btn-primary">Register</input>
+                    </div>
+                </form>
+            </div>
         </div>
-
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
-
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
-
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+    @endslot
+</x-layout.layout>
