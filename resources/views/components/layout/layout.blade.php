@@ -18,7 +18,7 @@
             {{ $slot_nav }}
         @endif
     </x-layout.nav>
-    <x-layout.main>
+    <x-layout.main >
         {{$slot_main}}
     </x-layout.main>
     <x-layout.footer>

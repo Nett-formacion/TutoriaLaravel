@@ -8,8 +8,21 @@
     <div class="w-3/5 flex justify-center items-center">
         <h1 class="text-3xl text-white h-auto max-w-full truncate ">APLICACIÓN EJEMPLO LARAVEL</h1>
     </div>
+    @guest
     <div class=" w-1/5 h-auto max-w-full flex items-center space-x-4 ">
         <a href="login" class="btn glass  text-white"> Acceder</a>
         <a href="register"  class="btn  glass text-white">Registrar</a>
     </div>
+    @endguest
+    @auth
+        <div class=" w-1/5 h-auto max-w-full flex flex-row items-center space-x-4 ">
+            <h2 class="text-white text-2xl ">{{auth()->user()->name}}</h2>
+                <form action="{{route('logout')}}" method="post">
+                    @csrf
+                    <input class="btn glass" type="submit" value="Logout">
+                </form>
+
+        </div>
+
+    @endauth
 </header>

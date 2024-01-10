@@ -25,6 +25,7 @@ Route::get('/dashboard', function () {
 
 Route::view("react","react" );
 Route::view("modal","modal" );
+Route::view("dashboard","ppal.dashboard" )->name("dashboard");
 
 Route::get("/",[\App\Http\Controllers\MainController::class,"index"])
     ->name("home");
